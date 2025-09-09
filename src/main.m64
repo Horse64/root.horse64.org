@@ -29,6 +29,10 @@
 import io from m64.horse64.org
 import str from m64.horse64.org
 
+func some_func_test(... <- i32) failable {
+    io.print("Hello!")
+}
+
 func main -> i32 {
     var s <- str.str("Hello World!")
     if failed(str.str) {
