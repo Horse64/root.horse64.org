@@ -1,46 +1,48 @@
 <!-- For license of this file, see LICENSE.md in the base dir. -->
 
-Introduction to Moose64
-=======================
+Introduction to Horse64 Root
+============================
 
-Moose64 is like C but with pretty Horse64 syntax and basic plain OOP,
-for maintainable high-performance code.
-It's part of the [Horse64 ecosystem](https://horse64.org).
+**Horse64 Root** is a system language similar to C/C++,
+with approachable syntax, and understandable OOP, and
+some baked-in safety features. This is a sibling variant of the
+main [Horse64 language](https://horse64.org) intended for lower
+level components.
 
 [For a 📋 features list, **go here**](/docs/Features.md).
 
-To build Moose64 programs and to manage dependencies, use [horp
+To build Horse64 Root programs and to manage dependencies, use [horp
 ](https://codeberg.org/Horse64/core.horse64.org/src/branch/main/docs/Resources.md#horp)
-like you would for Horse64 programs. The compiler for Moose64 is [moosec
-](https://codeberg.org/Horse64/core.horse64.org/src/branch/main/docs/Resources.md#moosec)
+like you would for Horse64 programs. The compiler for Horse64 Root is [horsec
+](https://codeberg.org/Horse64/core.horse64.org/src/branch/main/docs/Resources.md#horsec)
 and part of the [📥 SDK](
 https://codeberg.org/Horse64/core.horse64.org/src/branch/main/docs/Resources.md#sdk).
 
 
-How to learn Moose64
---------------------
+How to learn Horse64 Root
+-------------------------
 
-Since Moose64 is a side language to Horse64, this introduction
+Since Horse64 Root is a sibling language to Horse64, this introduction
 expects you to know how Horse64 works. Based on its sibling,
-Moose64 was constructed with the following changes:
+Horse64 Root was constructed with the following changes:
 
 
 ### Syntax, static types, and type annotations
 
-The basic syntax of Moose64 is based on the
+The basic syntax of Horse64 Root is based on the
 [Horse64 syntax](
-https://codeberg.org/Horse64/core.horse64.org/src/branch/main/docs/Tutorials/Syntax.md), but altered for Moose64 `.m64` files.
+https://codeberg.org/Horse64/core.horse64.org/src/branch/main/docs/Tutorials/Syntax.md), but altered for Horse64 Root `.m64` files.
 Continue reading to learn the main changes.
 
-Unlike Horse64 which is dynamically typed, Moose64 is
+Unlike Horse64 which is dynamically typed, Horse64 Root is
 **statically typed** with mandatory type annotations:
 
-```Moose64
-import std from m64.horse64.org
+```Horse64 Root
+import str from root.horse64.org
 
 func main -> bool {
-    var s <- std.str("Hello World!")
-    if failed(std.str) {  # Note: this means string alloc failed.
+    var s <- stir.str("Hello World!")
+    if failed(str.str) {  # Note: this means string alloc failed.
         return no
     }
     defer s.destroy()
@@ -53,7 +55,7 @@ func main -> bool {
 For variables and function parameters, `<- ...type desc...` after
 the declaration will annotate the parameter or variable type:
 
-```Moose64
+```Horse64 Root
 var my_var <- i32 = 5
 ```
 For function return values, `-> ...type desc...` right before the
@@ -68,7 +70,7 @@ func my_func -> i32 {
 Function pointers work by inlining the function header inside `(...)`
 parenthesis:
 
-```Moose64
+```Horse64 Root
 func this_returns_a_func_ptr -> ((_<-i32) -> bool) {
     return std.as_ref(my_other_func)
 }
@@ -77,7 +79,7 @@ func this_returns_a_func_ptr -> ((_<-i32) -> bool) {
 
 ### Memory management
 
-Moose64 has no garbage collection, instead all used data
+Horse64 Root has no garbage collection, instead all used data
 must be destroyed manually.
 
 Usually, this is achieved by:
@@ -87,7 +89,7 @@ Usually, this is achieved by:
   `x` was successfully initialized via `.init` or an
   init constructor short-hand:
 
-  ```Moose64
+  ```Horse64 Root
   var s <- std.str("Hello World!")  # Short-hand for s.init("Hello World")
   if failed(std.str) {
       return -1
@@ -101,7 +103,7 @@ Usually, this is achieved by:
   `x = std.alloc(...)` to make sure the allocation is released
   again later:
 
-  ```Moose64
+  ```Horse64 Root
   var s <- byte c_array = std.alloc(256)
   defer std.unalloc(s)
   # ...use `s` array here for whatever purpose...
@@ -109,7 +111,7 @@ Usually, this is achieved by:
 
 - for allocated arrays by using a `defer std.unalloc_array(x)`:
 
-  ```Moose64
+  ```Horse64 Root
   
   var s <- byte array = std.alloc_array(std.size_of(std.deref(s)), 256)
   defer std.unalloc_array(s)
@@ -130,7 +132,7 @@ which can e.g. be used for safe resource cleanup.
 
 While Horse64's approach to user types is the `type` statement
 which allows complex **object-oriented programming (OOP)**,
-Moose64's **default user type is the `struct`** statement.
+Horse64 Root's **default user type is the `struct`** statement.
 
 The biggest difference is that struct instances are **passed
 by value,** unless you use an explicit [`ref` variable](#ref-types) to
@@ -155,12 +157,12 @@ C's pointers.
 
 ### Function calls and overrides
 
-Unlike Horse64, Moose64 does **not allow so-called "keyword
+Unlike Horse64, Horse64 Root does **not allow so-called "keyword
 arguments"** that specify any default values. However,
-Moose64 **has function overriding** for func attributes
+Horse64 Root **has function overriding** for func attributes
 on [structs](#oop-with-structs), which works as follows:
 
-```Moose64
+```Horse64 Root
 struct MyTestStruct {
 }
 
