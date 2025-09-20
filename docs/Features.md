@@ -60,7 +60,7 @@ Measured safety
 ---------------
 
 Horse64 Root brings lowlevel safety features that
-are easy to use, consistently used in practice, and clear:
+are easy to use, used mostly consistently in practice, and clear:
 
 - **Block-level `defer` makes safe cleanup easy.**
   This type of statement is 1. easy to understand,
@@ -91,15 +91,17 @@ A clear code flow
 
 Horse64 Root tries to make the code flow and side effects obvious:
 
-- Using the `failable` semantics to easily check if a call
-  succeeded via `failed()` avoids complex exceptions. Errors
-  are propagated via a simple
-  `return failed`.
+- **The `failable` attribute provides painless error passing.**
+  It allows easily checking if a call
+  succeeded via `failed()` without disrupting normal code flow and
+  without complex exceptions.
 
-- Using no async nor promises, the straightforward event facilities
-  of the standard library try to avoid surprises.
+- **Straight forward code flow without async nor promises.** The
+  straightforward event facilities of the standard library try to
+  avoid surprises. If you want high-level async, [use
+  Horse64](https://horse64.org/) instead.
 
-- The object-oriented programming based on simple `struct`s is
+- **Simple object-oriented programming based on simple `struct`s** is
   simple and very extensible via composition. No virtual overrides
   obscure code flow.
 
