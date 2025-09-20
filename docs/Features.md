@@ -62,8 +62,8 @@ Measured safety
 Horse64 Root brings lowlevel safety features that
 are easy to use, consistently used in practice, and clear:
 
-- **Block-level `defer` makes safe cleanp easy.**
-  This statement is 1. easy to understand,
+- **Block-level `defer` makes safe cleanup easy.**
+  This type of statement is 1. easy to understand,
   and 2. easy to use correctly compared to e.g. C's `goto error`
   or the comparatively complex code flow of a C++ exception.
 
