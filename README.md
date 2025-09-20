@@ -5,10 +5,11 @@
 Horse64 Root Programming Language
 =================================
 
-**Horse64 Root** is a system language similar to zig or C
-but with pretty Horse64 syntax and solid, plain object-oriented
-programming. This is a sibling variant of the main [Horse64
-language](https://horse64.org) intended for lower level components.
+**Horse64 Root** is a system language similar to C/C++,
+with approachable syntax, and understandable OOP, and
+some baked-in safety features. This is a sibling variant of the
+main [Horse64 language](https://horse64.org) intended for lower
+level components.
 
 Its uses are:
 
@@ -17,6 +18,8 @@ Its uses are:
 
 - Borrows its syntax and approachable look from [Horse64](
   https://horse64.org/),
+
+- Has various memory safety features,
 
 - Great C inter-operability,
 

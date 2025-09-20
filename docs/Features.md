@@ -1,13 +1,13 @@
 <!-- For license of this file, see LICENSE.md in the base dir. -->
 
-Features of Moose64
+Features of Horse64 Root
 ===================
 
 **WARNING, THIS PROJECT IS SUPER UNFINISHED, SOME OF THIS ISN'T
 IMPLEMENTED YET.**
 
 Keep in mind many statements in this document are
-**subjective.** Nevertheless, Moose64 has the following features:
+**subjective.** Nevertheless, Horse64 Root has the following features:
 
 - Simpler than C++ or Rust, being a focused and streamlined
   lowlevel OOP language, [(see more about **streamlining**...)](
@@ -33,7 +33,7 @@ Keep in mind many statements in this document are
 If you're a beginner, you may want to learn
 [Horse64](https://horse64.org) instead.
 
-For how to use Moose64, [check out the
+For how to use Horse64 Root, [check out the
 introduction](/docs/Introduction.md).
 
 Read onward for more detailed feature explanations.
@@ -41,67 +41,66 @@ Read onward for more detailed feature explanations.
 A focused design
 ----------------
 
-Moose64 offers a modern, streamlined, and ocused
+Horse64 Root offers a modern, streamlined, and focused
 design, with the following advantages:
 
 - **Easy-to-read no-nonsense syntax with no historical baggage.**
 
-  This matters for: 1. reducing dangerous
-  security errors by misunderstanding complex rarely used
-  features (a risk e.g. as perhaps seen in advanced C++), 2.
-  reduced difficulty of learning due to clear syntax rather
-  than arcane double meanings (as e.g. perhaps seen in C).
+  This makes jumping in easier for newcomers.
 
-- **Core safety features are used mostly consistently by
-  demo code and core code, and weren't tacked on later.**
+- **Core safety features are used mostly consistently.**
 
-  This matters for: not having features like auto ref counting or
-  defer regarded as non-essential addons, misunderstood, and/or
-  underused (as e.g. perhaps seen in historical C++ code).
+  Safety is not an afterthought.
 
-- **Not making safety features time-consuming to master,
-  to try to make unsafe shortcuts unappeailng.**
+- **Doesn't make safety features time-consuming to master.**
 
-  This seems to be a problem many programmers perceive
-  regarding the complexity of Rust's safety mechasnisms.
+  It should be simpler to learn than e.g. Rust.
 
 Measured safety
 ---------------
 
-Moose64 brings lowlevel safety features that
-are easy to use, consistently shown in most demos, and clear:
+Horse64 Root brings lowlevel safety features that
+are easy to use, consistently used in practice, and clear:
 
-- **With block-level `defer`, local memory ownership is
-  easily handled.** This statement is 1. easy to understand,
+- **Block-level `defer` makes safe cleanp easy.**
+  This statement is 1. easy to understand,
   and 2. easy to use correctly compared to e.g. C's `goto error`
   or the comparatively complex code flow of a C++ exception.
 
-- **With available auto ref counting, non-local memory ownership
-  is easily handled**, and it's used mostly consistently. (If
-  you find it missing somewhere, please suggest improvements.)
+  Meanwhile, it leaves the power of memory management in your hands.
 
-- **Unnecessary complexity was avoided,** to make a safe and
-  reliable code flow relatively painless to write. For
-  example, there is no complex garbage collector, no complex
+- **Auto ref counting keeps track of memory ownership**, and it's
+  integrated deeply into the standard library and used ubiquitously.
+
+  This makes the language rather safe by default, rather than safety
+  being an afterthought you need to go out of your way to implement.
+
+- **No use of code flow obscuring exceptions.**
+  There are no exceptions used like in C++ that would obscure the
+  code flow. Instead, clean error passing is used.
+
+- **High user-facing complexity was avoided,** to make it fun and
+  approachable.
+
+  For example, there is no complex garbage collector, no complex
   ownership semantics, no borrow checker, no complex
-  asynchronicity, and so on.
+  asynchronicity, no complex error types, and so on.
 
 A clear code flow
 -----------------
 
-Moose64 tries to make the code flow and side effects obvious,
-while remaining approachable and flexible:
+Horse64 Root tries to make the code flow and side effects obvious:
 
 - Using the `failable` semantics to easily check if a call
-  succeeded via `failed()`, and to propagate errors via
-  `return failed`, without the comparatively complex leaps
-  of exceptions.
+  succeeded via `failed()` avoids complex exceptions. Errors
+  are propagated via a simple
+  `return failed`.
 
-- Using no async nor promises, but straightforward event facilities
-  and callbacks that are usually non-threaded.
+- Using no async nor promises, the straightforward event facilities
+  of the standard library try to avoid surprises.
 
-- The `struct` OOP is very extensible via composition,
-  while avoiding the obscured code flow of virtual overrides
-  or complex inheritance tree.
+- The object-oriented programming based on simple `struct`s is
+  simple and very extensible via composition. No virtual overrides
+  obscure code flow.
 
 
