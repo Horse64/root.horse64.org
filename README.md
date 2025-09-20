@@ -1,14 +1,16 @@
 
-![Moose64 Title Logo](https://m64.horse64.org/img/moose64logo.png)
+![Horse64 Root Title Logo](https://root.horse64.org/img/horse64rootlogo.png)
 
 
-Moose64 Programming Language
-============================
+Horse64 Root Programming Language
+=================================
 
-The [**Moose64**](https://m64.horse64.org) language is like C
-but with pretty Horse64 syntax and basic object-oriented
-programming. It's made for maintainable high-performance
-code. Its uses are:
+**Horse64 Root** is a system language similar to zig or C
+but with pretty Horse64 syntax and solid, plain object-oriented
+programming. This is a sibling variant of the main [Horse64
+language](https://horse64.org) intended for lower level components.
+
+Its uses are:
 
 - Simpler than C++, but still has competent
   object-oriented programming (OOP),
@@ -16,7 +18,9 @@ code. Its uses are:
 - Borrows its syntax and approachable look from [Horse64](
   https://horse64.org/),
 
-- Great C inter-operability.
+- Great C inter-operability,
+
+- Suitable for systems level code and low level code.
 
 - [See more...](/docs/Features.md)
 
@@ -33,8 +37,8 @@ code. Its uses are:
 
 This repository holds the code of the m64 stdlib, which is the m64 standard
 library, and its main documentation. The code is officially hosted on
-[Codeberg](https://codeberg.org/Horse64/m64.horse64.org) with a GitHub
-mirror. The code of the moosec compiler is part of the `core.horse64.org`
+[Codeberg](https://codeberg.org/Horse64/root.horse64.org) with a GitHub
+mirror. The code of the horsec compiler is part of the `core.horse64.org`
 package instead.
 
 
@@ -42,15 +46,15 @@ Install & Build
 ---------------
 
 The recommended way to install is [to get the prebuilt Horse64 SDK](
-https://horse64.org/get) which includes [the moosec compiler for Moose64](
-/docs/Compilation.md).
+https://horse64.org/get) which includes [the horsec
+compiler](/docs/Compilation.md) that handles Horse64 & Horse64 Root.
 
 
 Where Is What?
 --------------
 
 If you want to contribute or report a bug, you'll find
-the Horse64 and Moose64 ecosystem is made of a larger
+the Horse64 ecosystem is made of a larger
 bunch of projects. Due to that, **locating where each
 component is** and where the code is, can occasionally
 be challenging. Therefore, there's a
