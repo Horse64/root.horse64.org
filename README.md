@@ -6,7 +6,7 @@ Horse64 Root Programming Language
 =================================
 
 **Horse64 Root** is a system language similar to C/C++,
-reimagined with a focus on approachable syntax, and understandable
+reimagined with a focus on easy syntax, understandable
 OOP, and some baked-in safety features. This is a sibling variant of
 the main [Horse64 language](https://horse64.org) intended for lower
 level components.
