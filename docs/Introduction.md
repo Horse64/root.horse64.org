@@ -9,7 +9,9 @@ OOP, and some baked-in safety features. This is a sibling variant
 of the main [Horse64 language](https://horse64.org) intended for lower
 level components.
 
-[For a 📋 features list, **go here**](/docs/Features.md).
+- For a [📋 features list, **go here**](/docs/Features.md).
+
+- There's also [an FAQ here](/docs/FAQ.md).
 
 To build Horse64 Root programs and to manage dependencies, use [horp
 ](https://codeberg.org/Horse64/core.horse64.org/src/branch/main/docs/Resources.md#horp)
