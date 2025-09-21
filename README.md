@@ -32,11 +32,13 @@ Its uses are:
 
 ### Useful starting points
 
-- [Read introduction](/docs/Introduction.md).
+- [Read introduction](/docs/Introduction.md),
 
-- [Check project news](https://horse64.org/#news).
+- [Check project news](https://horse64.org/#news),
 
-- [Project license](LICENSE.md).
+- [See the project license](LICENSE.md),
+
+- [Read the FAQ](/docs/FAQ.md).
 
 This repository holds the code of the m64 stdlib, which is the m64 standard
 library, and its main documentation. The code is officially hosted on
