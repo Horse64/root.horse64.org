@@ -1,7 +1,7 @@
 <!-- For license of this file, see LICENSE.md in the base dir. -->
 
 Features of Horse64 Root
-===================
+========================
 
 **WARNING, THIS PROJECT IS SUPER UNFINISHED, SOME OF THIS ISN'T
 IMPLEMENTED YET.**
@@ -38,6 +38,7 @@ introduction](/docs/Introduction.md).
 
 Read onward for more detailed feature explanations.
 
+
 A focused design
 ----------------
 
@@ -55,6 +56,7 @@ design, with the following advantages:
 - **Doesn't make safety features time-consuming to master.**
 
   It should be simpler to learn than e.g. Rust.
+
 
 Measured safety
 ---------------
@@ -86,6 +88,7 @@ are easy to use, used mostly consistently in practice, and clear:
   ownership semantics, no borrow checker, no complex
   asynchronicity, no complex error types, and so on.
 
+
 A clear code flow
 -----------------
 
@@ -105,4 +108,16 @@ Horse64 Root tries to make the code flow and side effects obvious:
   simple and very extensible via composition. No virtual overrides
   obscure code flow.
 
+
+Why not Rust?
+-------------
+
+Horse64 Root aims to be easier to learn, easier to write, better
+to adapt and maintain, and with less memory needs.
+
+The perceived rigidness and high barrier for entry of Rust, as well as
+the high memory needs making compilation on older hardare difficult,
+is what led to the decision to work on an alterantive.
+
+Whether that alternative succeeds, is for you to judge.
 
