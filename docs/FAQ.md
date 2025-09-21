@@ -13,3 +13,12 @@ Horse64 Root allows more control and runs faster.
 
 See [here](/docs/Features#why-not-rust).
 
+
+## Can I use Horse64 Root on embedded hardware?
+
+Horse64 Root needs at least a 32bit CPU with support for
+64bit integer math support in hardware, and some modules
+depend on pre-emptive hardware threading provided by some
+operating system layer. Therefore, it may not be the most
+suited for embedded use right now.
+
