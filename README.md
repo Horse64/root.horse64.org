@@ -11,6 +11,19 @@ OOP, and some baked-in safety features. This is a sibling variant of
 the main [Horse64 language](https://horse64.org) intended for lower
 level components.
 
+```Horse64 Root
+import str from root.horse64.org
+
+func main -> i32 {
+    var s <- str.str("Hello World!")
+    if failed(str.str) {
+        return -1
+    }
+    print(s)
+    return 0
+}
+```
+
 Its uses are:
 
 - Simpler than C++, but still has competent
