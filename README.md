@@ -15,7 +15,7 @@ level components.
 import str from root.horse64.org
 
 func main -> i32 {
-    var s <- str.str("Hello World!")
+    var s <- str.str("Hello from Horse64 Root!")
     if failed(str.str) {
         return -1
     }
