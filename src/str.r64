@@ -30,9 +30,9 @@ c_import "stdlib.h" as c_stdlib
 c_import "stdio.h" as c_stdlib
 c_import "string.h" as c_stdlib
 
-import debug from m64.horse64.org
-import limit from m64.horse64.org
-import memory from m64.horse64.org
+import debug from root.horse64.org
+import limit from root.horse64.org
+import memory from root.horse64.org
 
 const str_stack_bytes <- size = 32
 

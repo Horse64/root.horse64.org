@@ -30,7 +30,7 @@ c_import "stdlib.h" as c_stdlib
 c_import "stdio.h" as c_stdlib
 c_import "string.h" as c_stdlib
 
-import limit from m64.horse64.org
+import limit from root.horse64.org
 
 const array_size_unset <- size = limit.size_max
 

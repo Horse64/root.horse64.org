@@ -28,10 +28,10 @@
 
 c_import "stdlib.h" as c_stdlib
 
-import io from m64.horse64.org
-import memory from m64.horse64.org
-import str from m64.horse64.org
-import system from m64.horse64.org
+import io from root.horse64.org
+import memory from root.horse64.org
+import str from root.horse64.org
+import system from root.horse64.org
 
 func assert(condition <- bool) {
     if not condition {

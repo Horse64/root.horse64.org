@@ -26,11 +26,10 @@
 # Alternatively, at your option, this file is offered under the Apache 2
 # license, see accompanied LICENSE.md.
 
-import io from m64.horse64.org
-import str from m64.horse64.org
+import str from root.horse64.org
 
 func some_func_test(... <- i32) failable {
-    io.print("Hello!")
+    print("Hello!")
 }
 
 func main -> i32 {
@@ -38,7 +37,7 @@ func main -> i32 {
     if failed(str.str) {
         return -1
     }
-    io.print(s)
+    print(s)
     return 0
 }
 
