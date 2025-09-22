@@ -1,6 +1,6 @@
 
-m64 stdlib Licensing (m64 stdlib is the moose64 standard library)
-=================================================================
+Horse64 Root stdlib Licensing (this project is the Horse64 Root stdlib)
+=======================================================================
 
 *(Note: this document omits compiled-in 3rd party dependencies. Without
 guarantees of completeness or accuracy, `horp license .` run in
@@ -15,7 +15,7 @@ Files outside of the `vendor` directory are, unless indicated
 otherwise, licensed under the following **BSD-2-Clause license**:
 
 ```
-Copyright (c) 2024-2025, ellie/@ell1e & m64 stdlib's contributors
+Copyright (c) 2024-2025, ellie/@ell1e & Horse64 Root's contributors
 (see AUTHORS.md).
 
 Redistribution and use in source and binary forms, with or without
@@ -274,7 +274,7 @@ Contributions, Binaries
 The same rules apply as for [main repo contributions, including the DCO](
     https://codeberg.org/Horse64/core.horse64.org/src/branch/main/LICENSE.md#contributions).
 
-Also, official Moose64 SDK binaries may fetch [the official logos](
+Also, official Horse64 SDK binaries may fetch [the official logos](
     https://codeberg.org/Horse64/branding/src/branch/main/LICENSE.md)
 on demand, if updates are permitted by the user. You should disable
 that functionality in forks of the SDK tooling.
