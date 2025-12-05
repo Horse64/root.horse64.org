@@ -28,16 +28,35 @@
 
 import str from root.horse64.org
 
-func some_func_test(... <- i32) failable {
+struct mystruct {
+    var i <- i32 = 5
+}
+
+enum myenum {
+    T_ONE=1,
+    T_TWO=2,
+}
+
+alias myenum2 for myenum
+
+func some_func_test(... <- i32) failable -> i32 {
     print("Hello!")
+    return failed 5
 }
 
 func main -> i32 {
     var s <- str.str("Hello World!")
     if failed(str.str) {
+        var error_val <- i32 = failnum
         return -1
     }
     print(s)
+    var test <- mystruct()
+    if failed(mystruct) {
+        return -1
+    }
+    defer test.destroy()
+    var bounus <- myenum2 = as(myenum2, T_ONE)
     return 0
 }
 
