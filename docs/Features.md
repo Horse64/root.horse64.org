@@ -6,37 +6,31 @@ Features of Horse64 Root
 **WARNING, THIS PROJECT IS SUPER UNFINISHED, SOME OF THIS ISN'T
 IMPLEMENTED YET.**
 
-Keep in mind many statements in this document are
-**subjective.** Nevertheless, Horse64 Root has the following features:
+Remember, this document is **subjective.** Here are Horse64 Root's features:
 
-- Simpler than C++ or Rust, being a focused and streamlined
-  lowlevel OOP language, [(see more about **streamlining**...)](
-  #a-focused-design)
+- Simpler than C++ or Rust, a streamlined lowlevel OOP language.
+  [(Read about **streamlining**...)](#a-focused-design)
 
-- Borrows its syntax and approachable look from [Horse64](
-  https://horse64.org/),
+- Looks similarly approachable to [Horse64](https://horse64.org/).
 
-- Great C inter-operability,
+- Designed for C inter-operability.
 
-- Expert manual memory management as found in many
-  systems programming languages,
+- Expert manual memory access as common for system languages.
 
-- Ownership features for memory safety l/ike `defer`,
-  `add_own()`/`del_own()`, and array length checks, [(see
-  more about **safety**...)](#measured-safety)
+- Features for better memory safety like `defer`, `own()`,
+  `unown()`. [(Read about **safety**...)](#measured-safety)
 
-- Avoids exceptions with instead a simpler `failable` handling,
-  [(see more about **simple code flow**...)](#a-clear-code-flow)
+- Avoids exceptions in favor of a simpler `failable` handling.
+  [(Read about **simple code flow**...)](#a-clear-code-flow)
 
-- Amazing integration with the Horse64 ecosystem.
+- Pairs up well with high-level [Horse64](https://horse64.org/).
 
-If you're a beginner, you may want to learn
-[Horse64](https://horse64.org) instead.
+If you're a beginner, e.g. if above list confuses you, try
+[Horse64](https://horse64.org) first.
 
-For how to use Horse64 Root, [check out the
-introduction](/docs/Introduction.md).
+To get started with Horse64 Root, [check the intro](/docs/Introduction.md).
 
-Read onward for more detailed feature explanations.
+Read onward for more detailed technical feature explanations.
 
 
 A focused design
@@ -108,12 +102,122 @@ Horse64 Root tries to make the code flow and side effects obvious:
   simple and very extensible via composition. No virtual overrides
   obscure code flow.
 
+  
+Comparison with other languages and use cases
+---------------------------------------------
+
+⚠️⚠️⚠️ **Horse64 Root is currently very unfinished. The following
+information is more of a roadmap, not the current state.** ⚠️⚠️⚠️
+
+Here's a comparison to
+[Python](https://python.org),
+[JavaScript (JS)](https://www.javascript.com/),
+[Go](https://go.dev/), and
+[C++](https://cplusplus.com/). *Disclaimer: this list is
+subjective, **no guarantee of accuracy**.*
+
+[Please report inaccuracies.](/docs/Resources.md#report-bugs).
+
+
+### Syntax, Core, and Code Flow Features
+
+|H64 Root|Python|JS|Go|C++|Lua|Syntax, Core, and Code Flow             |
+|--------|------|--|--|---|---|----------------------------------------|
+| |✔|✔| | |✔|**Dynamic types** as a beginner-friendly default.         |
+|✔|✔| |✔|✔|✔|**Strongly typed** to avoid silent harmful conversions.   |
+|〰|✔| |✔| |✔|**Minimal, clean syntax** without line terminators.       |
+|✔|✔|❓|✔|✔| |**Type annotations** can be used for extra verbosity.     |
+|✔| | |✔|✔| |**Advanced type checker** verifies types ahed of time.    |
+| |✔|✔| | |✔|**Minimizes concurrency crashes** in buggy code.          |
+|✔| |✔|〰|✔|✔|**Line breaks optional** for versatile code layout.       |
+| | |〰|✔| | |**Concurrency** of all I/O and network default APIs.      |
+| |✔|✔|✔|✔| |**Garbage-Collector** to make avoiding leaks easier.      |
+|〰|✔|✔|✔| |✔|**Object-oriented class types** as built-in feature.     |
+|✔| |〰|✔| |〰|**Extend types without inheriting** as built-in feature.  |
+| |✔| | |✔| |**Native multiple bases inheritance** for mixins.         |
+| | | |✔| | |**Auto-parallel threaded execution** of every async call. |
+| | | | |❓|✔|**Tail-call optimization** enabled by default.            |
+|✔| | | | |✔|**1-based indexing** that is more beginner-friendly.      |
+
+### Multimedia and Desktop App Features
+
+(⚠️ Horse64 Root isn't great here, try Horse64 instead!)
+
+|H64 Root|Python|JS|Go|C++|Lua|Libraries and Desktop App Features      |
+|--------|------|--|--|---|---|----------------------------------------|
+| |✔|〰|✔|〰| |**Big standard library** without extra setup.             |
+|〰| |✔| | | |**UI and graphics integrated** for easy graphical apps.   |
+| |✔|✔|✔| | |**High-level networking by default** for servers etc.     |
+|〰|✔|✔|✔|❓| |**Unicode with full grapheme support** by default.        |
+
+### Deployment Features
+
+|H64 Root|Python|JS|Go|C++|Lua|Deployment Features                     |
+|--------|------|--|--|---|---|----------------------------------------|
+|✔| | |✔|✔| |**Portable program binaries** as default output.          |
+|✔| | |✔|✔| |**Self-contained, no install** needed for end users.      |
+|✔|✔| |✔| | |**Official packaging tools** for easy project handling.   |
+| |✔|✔|❓| |✔|**Compiler trivially usable at runtime**, if needed.      |
+|✔| | |❓|❓| |**Easily bake in all binary resources** like images.      |
+|✔| | |❓| | |**Virtual archive mounting** for all standard I/O.        |
+| |❓|❓|✔|✔| |**Can make C API libraries** easily for C/C++ program use.|
+
+### Scripting Features
+
+(⚠️ Horse64 Root can't do this at all!)
+
+|H64 Root|Python|JS|Go|C++|Lua|Scripting Features                      |
+|--------|------|--|--|---|---|----------------------------------------|
+| |✔|✔|❓| |✔|**Compiler trivially usable at runtime**, if needed.      |
+| |✔|✔| | |✔|**Instant script use** for fast script helper launch.     |
+| |〰|✔| | |✔|**Easy runtime `eval()`** for trivial script injection.   |
+| | |✔| | | |**Runs in web browser** by default, for simple web use.   |
+| |✔|✔| | |✔|**Embedded easily** for integrated, subordinate scripts.  |
+| |✔|✔| | |✔|**Easy runtime module loading** for trivial mutability.   |
+| |✔|✔| | |✔|**Dynamic global scope** at runtime, extreme mutability.  |
+| |✔|✔|❓| |✔|**REPL shipped by default** for dynamic experiments.      |
+
+### Large Project Features
+
+|H64 Root|Python|JS|Go|C++|Lua|Tooling and Large Project Features      |
+|--------|------|--|--|---|---|----------------------------------------|
+|✔| | |✔|✔| |**Precompiled** always, for better large project checks.  |
+|✔| | |✔|✔| |**Static name resolution** to catch most typos early.     |
+|✔| | |✔|✔| |**Non-trivial optimizations and warnings** by default.    |
+|✔| | |✔|✔| |**Forced type declarations** for deepest compile checks.  |
+| |✔|✔| | |✔|**Focused clean syntax** to write larger projects fast.   |
+
+### Organizational Structure Comparison
+
+|H64 Root|Python|JS|Go|C++|Lua|Organizational Structure Comparison     |
+|--------|------|--|--|---|---|----------------------------------------|
+|✔|✔|〰|✔| |✔|**One central default runtime** for combined efforts.    |
+|✔|〰| |✔|✔| |**Default compiler self-hosted**, for easier changes.    |
+
+### Runtime Performance and Lowlevel Features
+
+|H64 Root|Python|JS|Go|C++|Lua|Runtime Perf. and Lowlevel Features     |
+|--------|------|--|--|---|---|----------------------------------------|
+| |✔|✔| | |✔|**Bytecode interpreter** for high portability.            |
+|✔| | |✔|✔| |**Attribute lookups largely AOT**, to avoid bottlenecks.  |
+|✔| |❓|✔|✔| |**Compiler made for AOT optimizations.**                  |
+|✔|〰| |✔|✔| |**Largely lock-free memory sharing** for fast threading.  |
+|✔| |✔|✔|✔| |**Always uses JIT** for speed, or 100% AOT compiled.      |
+|✔| | |✔|✔| |**Outputs machine code** always, for extreme speed.       |
+|✔| | | |✔| |**Fully manual allocations** easily available.            |
+
+*(AOT refers to Ahead-of-Time, handled at compile time rather than
+runtime.)*
+
+For an easier to use high-level language, [see Horse64's list](
+https://horse64.org/docs/Features#comparison-with-other-languages-and-use-cases).
+
 
 Why not Rust?
 -------------
 
 Horse64 Root aims to be easier to learn, easier to write, better
-to adapt and maintain, and with less memory needs.
+to adapt and maintain, and with lower hardware demands for developers.
 
 The perceived rigidness and high barrier for entry of Rust, as well as
 the high memory needs making compilation on older hardare difficult,
