@@ -3,9 +3,9 @@
 Compilation
 ===========
 
-A program's code is written in an `.m64` text file, then translated
-by [moosec
-](https://codeberg.org/Horse64/core.horse64.org/src/branch/main/docs/Resources.md#moosec) 
+A program's code is written in an `.r64` text file, then translated
+by [horsec
+](https://codeberg.org/Horse64/core.horse64.org/src/branch/main/docs/Resources.md#horsec) 
 to C, and then turned into a final binary by a C compiler like
 `gcc` or `clang`.
 The result is a mostly standalone executable.
@@ -18,7 +18,7 @@ helps with project management.
 Stages
 ------
 
-These are the current compilation stages of mooseec as of 2024-06-08:
+These are the current compilation stages for Horse64 Root as of 2025-12-17:
 
 All stages from `--stage token` up to `--stage transformed-code` (or
 the equivalent `--stage transformed-ast`) are equivalent to the
