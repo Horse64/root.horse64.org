@@ -1,6 +1,6 @@
 ## @module str
-# Copyright (c) 2024-2025, ellie/@ell1e & Horse64 Root's contributors
-# # (see AUTHORS.md).
+# Copyright (c) 2024-2026, ellie/@ell1e & Horse64 Root's contributors
+# (see AUTHORS.md).
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -57,6 +57,11 @@ struct str {
 func str.init_as_copy(
         other_str <- readonly str implicit ref
         ) failable override {
+    self.init()
+    if failed(self.init) {
+        return failed
+    }
+
     self.copy_from(other_str)
     if failed(self.copy_from) {
         return failed
@@ -66,6 +71,11 @@ func str.init_as_copy(
 func str.init_from_inline_c_str(
         c_str <- readonly byte c_array
         ) failable override {
+    self.init()
+    if failed(self.init) {
+        return failed
+    }
+
     var c_array_var <- readonly byte array =
         memory.alloc_array(
             0, 0
@@ -86,6 +96,11 @@ func str.init_from_inline_c_str(
 func str.init_from_bytebuf(
         c_str <- readonly byte array
         ) failable override {
+    self.init()
+    if failed(self.init) {
+        return failed
+    }
+
     var str_len <- size
     if c_str.len == memory.array_size_unset {
         str_len = memory.c_str_nulpos(c_str.data)
