@@ -15,7 +15,7 @@ Files outside of the `vendor` directory are, unless indicated
 otherwise, licensed under the following **BSD-2-Clause license**:
 
 ```
-Copyright (c) 2024-2025, ellie/@ell1e & Horse64 Root's contributors
+Copyright (c) 2024-2026, ellie/@ell1e & Horse64 Root's contributors
 (see AUTHORS.md).
 
 Redistribution and use in source and binary forms, with or without
@@ -251,7 +251,7 @@ are, unless indicated otherwise, also offered under the following
 ...with the following copyright notice:
 
 ```
-Copyright (c) 2024-2025, ellie/@ell1e & m64 stdlib's contributors
+Copyright (c) 2024-2026, ellie/@ell1e & m64 stdlib's contributors
 (see AUTHORS.md).
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -274,8 +274,8 @@ Contributions, Binaries
 The same rules apply as for [main repo contributions, including the DCO](
     https://codeberg.org/Horse64/core.horse64.org/src/branch/main/LICENSE.md#contributions).
 
-Also, official Horse64 SDK binaries may fetch [the official logos](
+Also, official Horse64 Root binaries may ship with or fetch
+[the official logos](
     https://codeberg.org/Horse64/branding/src/branch/main/LICENSE.md)
-on demand, if updates are permitted by the user. You should disable
-that functionality in forks of the SDK tooling.
-
+on demand, if updates are permitted by the user. Remember to disable
+that and to change the project name if you should fork the SDK tooling.
