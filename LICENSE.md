@@ -267,6 +267,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
+**We ask you don't use AI training on this repository, since it seems
+potentially incompatible with attribution requirements like above.**
+(This isn't legal advice. But please don't train AI on this, thanks.)
+
 
 Contributions, Binaries
 -----------------------
@@ -278,4 +282,5 @@ Also, official Horse64 Root binaries may ship with or fetch
 [the official logos](
     https://codeberg.org/Horse64/branding/src/branch/main/LICENSE.md)
 on demand, if updates are permitted by the user. Remember to disable
-that and to change the project name if you should fork the SDK tooling.
+that and to change the project name if you should fork the Horse64 Root
+project.
